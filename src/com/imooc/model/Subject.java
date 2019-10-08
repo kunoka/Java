@@ -1,10 +1,16 @@
 package com.imooc.model;
 
 public class Subject {
-    // 成员属性：学科名称、学科编号、学制年限
+    // 成员属性：学科名称、学科编号、学制年限、学校学生、学生数量
     private String subjectName;
     private String subjectNo;
     private int subjectLife;
+    private Student[] subjectStudents;
+    private int studentNum;
+
+    public Subject() {
+
+    }
 
     public Subject(String subjectName, String subjectNo, int subjectLife) {
         this.setSubjectName(subjectName);
@@ -24,10 +30,24 @@ public class Subject {
 
     // 设置学科年限
     public void setSubjectLife(int subjectLife) {
-        if(subjectLife < 0) {
+        if (subjectLife < 0) {
             return;
         }
         this.subjectLife = subjectLife;
+    }
+
+    // 增加学生
+    public void addStudent(Student stu) {
+        if (this.subjectStudents == null) {
+            this.subjectStudents = new Student[200];
+        }
+        for (int i = 0; i < this.subjectStudents.length; i++) {
+            if (this.subjectStudents[i] == null) {
+                this.subjectStudents[i] = stu;
+                this.studentNum =   this.studentNum + 1;
+                return;
+            }
+        }
     }
 
     // 获取学科名称
@@ -43,6 +63,16 @@ public class Subject {
     // 获取学科年限
     public int getSubjectLife() {
         return this.subjectLife;
+    }
+
+    // 获取学院的学生
+    public Student[] getStudents() {
+        return this.subjectStudents;
+    }
+
+    // 获取学生数量
+    public int getStudentNum() {
+        return this.studentNum;
     }
 
     /**
