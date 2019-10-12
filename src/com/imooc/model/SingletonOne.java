@@ -10,8 +10,6 @@ public class SingletonOne {
     static SingletonOne instance = new SingletonOne();
 
     public static SingletonOne getInstance() {
-        name = "123";
-        name = "456";
         return  instance;
     }
 }
