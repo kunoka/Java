@@ -1,9 +1,9 @@
 package com.imooc.model;
 
 public class Animal {
-    public String name = "父类名字";
-    public int month;
-
+    private String name = "父类名字";
+    private int month;
+    final String test;
     static {
         System.out.println("我是父类的静态方法");
     }
@@ -13,10 +13,12 @@ public class Animal {
     }
 
     public Animal() {
+        test = "12354";
         System.out.println("我是父类无参数构造方2");
     }
 
     public Animal(String name, int month) {
+        test = "123544444";
         this.name = name;
         this.month = month;
         System.out.println("我是父类的带参构造函数");
@@ -60,7 +62,10 @@ public class Animal {
         if (this.getName() == obj.getName() && this.getMonth() == obj.getMonth()) return true;
         else return false;
     }
-    public String toString(){
-        return "名字: " + name + "    月份: " + month;
+
+    public String toString() {
+        final String a = "test";
+        return test + " 名字: " + name + "    月份: " + month;
     }
+
 }
