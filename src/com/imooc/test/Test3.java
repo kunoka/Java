@@ -1,6 +1,7 @@
 package com.imooc.test;
 
 import com.imooc.model.Animal;
+import com.imooc.twoseven.Cat;
 
 public class Test3 {
     public static void main(String[] args) {
@@ -16,5 +17,16 @@ public class Test3 {
         System.out.println("============");
         System.out.println(one.toString());
         System.out.println(two.toString());
+
+        Icall three = new Cat();
+        three.call();
+        System.out.println(Icall.TEMP);
+        System.out.println(three.TEMP);
+        Cat four = new Cat();
+        System.out.println(four.TEMP);
+        four.connection();
+        three.connection();
+        Icall.stop();
+
     }
 }
