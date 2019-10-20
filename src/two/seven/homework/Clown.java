@@ -11,9 +11,8 @@ public class Clown implements IACT {
     int age;
     String cloth;
 
-    public Clown(String name, int age, String cloth) {
+    public Clown(String name, int age) {
         setAge(age);
-        setCloth(cloth);
         setName(name);
     }
 
@@ -21,8 +20,12 @@ public class Clown implements IACT {
     public void act() {
         System.out.println("姓名: " + getName());
         System.out.println("艺龄: " + getAge() + "岁");
-        System.out.println("着装: " + getCloth());
+        dress();
         skill();
+    }
+
+    public void dress() {
+        System.out.println("着装: 身穿五彩服装，头上戴着彩色的帽子，脸上画着夸张的彩妆");
     }
 
     @Override
@@ -38,21 +41,11 @@ public class Clown implements IACT {
         this.name = name;
     }
 
-
-    public void setCloth(String cloth) {
-        this.cloth = cloth;
-    }
-
     public String getName() {
         return name;
     }
 
     public int getAge() {
         return age;
-    }
-
-
-    public String getCloth() {
-        return cloth;
     }
 }

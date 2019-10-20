@@ -23,7 +23,7 @@ public class test {
                 parrot.act();
                 break;
             case 5:
-                Clown clown = new Clown("Kahle", 5,"身穿五彩服装，头上戴着彩色的帽子，脸上画着夸张的彩妆");
+                Clown clown = new Clown("Kahle", 5);
                 clown.act();
                 break;
             default:
@@ -38,12 +38,14 @@ public class test {
         do {
             System.out.println("********欢迎来到太阳马戏团🎪********");
             System.out.println("**********  请选择表演者   **********");
-            System.out.println("**********     1.棕熊     **********");
-            System.out.println("**********     2.狮子     **********");
-            System.out.println("**********     3.猴子    **********");
-            System.out.println("**********     4.鹦鹉     **********");
-            System.out.println("**********     5.小丑     **********");
-            Scanner s = new Scanner(System.in);
+            System.out.println("**********     1.棕熊 🐻    **********");
+            System.out.println("**********     2.狮子 🦁  **********");
+            System.out.println("**********     3.猴子 🐒 **********");
+            System.out.println("**********     4.鹦鹉  🦜   **********");
+            System.out.println("**********     5.小丑  🤾‍️   **********");
+
+
+           Scanner s = new Scanner(System.in);
             num = s.nextInt();
             System.out.println("您输入的是: " + num);
             test a = new test();
