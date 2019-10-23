@@ -9,11 +9,11 @@ public class CatTest {
         Cat huahua = new Cat("花花", 12,"英国短毛猫");
         Cat fanfan = new Cat("凡凡", 6,"中华田园猫");
 
-        Set set = new HashSet();
+        Set<Cat> set = new HashSet<Cat>();
         set.add(huahua);
         set.add(fanfan);
 
-        Iterator it = set.iterator();
+        Iterator<Cat> it = set.iterator();
         while(it.hasNext()){
             System.out.println(it.next());
         }
@@ -58,5 +58,41 @@ public class CatTest {
         }else{
             System.out.println("没有找到");
         }
+        Set<Cat> set1 = new HashSet<Cat>();
+        // 删除花花二代的信息并重新输出
+        for(Cat cat:set){
+//            if("花花".equals(cat.getName())){
+//                set.remove(cat);
+//                break;
+//            }
+            System.out.println(cat.getAge());
+            if(cat.getAge() > 6){
+                set1.add(cat);
+            }
+        }
+        for(Cat cat:set1){
+            System.out.println(cat);
+        }
+        set.removeAll(set1);
+        System.out.println("*********************");
+        System.out.println("删除大于6岁后的列表为");
+        for(Cat cat:set){
+            System.out.print(cat);
+            System.out.println();
+        }
+        //删除所有
+        boolean flag1 = set.removeAll(set);
+        if(flag1){
+            System.out.println("删除成功");
+        }else {
+            System.out.println("没有删除成功");
+        }
+        if(set.isEmpty()){
+            System.out.println("猫都不见了");
+        }else{
+            System.out.println("猫猫还在");
+        }
+        //删除所有年龄大于6个月的
     }
+
 }
