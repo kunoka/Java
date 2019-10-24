@@ -6,9 +6,9 @@ public class DictionaryDemo {
     public static void main(String[] args) {
         //输入三组数据
         Map<String, String> animal = new HashMap<String, String>();
+        Scanner sc = new Scanner(System.in);
         int i =0;
         while (i < 3) {
-            Scanner sc = new Scanner(System.in);
             System.out.println("请输入key: ");
             String key = sc.next();
             System.out.println("请输入 value");
@@ -30,6 +30,18 @@ public class DictionaryDemo {
         for(Map.Entry<String, String> entry:entrySet){
             System.out.print(entry.getKey() + '-');
             System.out.println(entry.getValue());
+        }
+        //通过单词找到注释并输出
+        //使用keySet方法
+        System.out.println("请输入要查找的key");
+        String strSearch = sc.next();
+        //1. 取得keySet
+        Set<String> keySet = animal.keySet();
+        for(String key:keySet){
+            if(strSearch.equals(key)){
+                System.out.println("找到了!" + "键值对为: " + key + '-' + animal.get(key));
+                break;
+            }
         }
     }
 }
