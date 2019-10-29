@@ -1,4 +1,4 @@
-package three.homework;
+package three.five.homework;
 
 public class Consumer implements Runnable {
     Queue queue;

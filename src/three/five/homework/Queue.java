@@ -1,4 +1,4 @@
-package three.homework;
+package three.five.homework;
 
 public class Queue {
     private int i = 0;

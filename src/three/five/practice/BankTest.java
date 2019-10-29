@@ -1,4 +1,4 @@
-package three.practice;
+package three.five.practice;
 
 public class BankTest {
     public static void main(String[] args) {

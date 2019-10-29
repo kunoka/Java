@@ -1,4 +1,4 @@
-package three.homework;
+package three.five.homework;
 
 public class Test {
     public static void main(String[] args) {
