@@ -9,6 +9,8 @@ public class ReaderDemo {
             FileOutputStream fos = new FileOutputStream("./src/three/six/imooc1.txt");
             InputStreamReader isr = new InputStreamReader(fis, "utf-8");
             OutputStreamWriter osw = new OutputStreamWriter(fos);
+            BufferedReader bs = new BufferedReader(isr);
+            BufferedWriter bw = new BufferedWriter(osw);
             int n = 0;
             char[] cbuf = new char[10];
             //第一种输出方法
@@ -22,15 +24,17 @@ public class ReaderDemo {
 //                String s = new String(cbuf, 0, n);
 //                System.out.println(s);
 //            }
-            while ((n = isr.read(cbuf)) != -1) {
+            while ((n = bs.read(cbuf)) != -1) {
                 System.out.print((char) n);
-                osw.write(cbuf, 0, n);
-                osw.flush();
+                bw.write(cbuf, 0, n);
+                bw.flush();
             }
             fis.close();
             fos.close();
             isr.close();
             osw.close();
+            bw.close();
+            bs.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
