@@ -6,7 +6,7 @@ public class Test {
     public static void main(String[] args) {
         Goods goods1 = new Goods("G0001", "手机", 3000);
         System.out.println(goods1);
-        File file = new File("./src/three/six/practice/tmp.txt");
+//        File file = new File("./src/three/six/practice/tmp.txt");
         try {
             FileOutputStream fos = new FileOutputStream("./src/three/six/practice/tmp.txt");
             FileInputStream fis = new FileInputStream("./src/three/six/practice/tmp.txt");
